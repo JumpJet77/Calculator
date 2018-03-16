@@ -6,6 +6,8 @@ import android.widget.EditText;
 
 public class Calculator extends AppCompatActivity {
 
+    private CalculatorLogic calculatorLogic = new CalculatorLogic();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
