@@ -3,6 +3,7 @@ package ua.edu.viti.calculator;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -73,8 +74,10 @@ public class Calculator extends AppCompatActivity {
                 if (Objects.equals(editText.getText().toString(), startField)) {
                     editText.getText().clear();
                     editText.getText().append('1');
+                    Log.d("number", "1");
                 } else {
                     editText.getText().append('1');
+                    Log.d("number", "1");
                 }
             }
         });
@@ -86,8 +89,10 @@ public class Calculator extends AppCompatActivity {
                 if (Objects.equals(editText.getText().toString(), startField)) {
                     editText.getText().clear();
                     editText.getText().append('2');
+                    Log.d("number", "2");
                 } else {
                     editText.getText().append('2');
+                    Log.d("number", "2");
                 }
             }
         });
@@ -99,8 +104,10 @@ public class Calculator extends AppCompatActivity {
                 if (Objects.equals(editText.getText().toString(), startField)) {
                     editText.getText().clear();
                     editText.getText().append('3');
+                    Log.d("number", "3");
                 } else {
                     editText.getText().append('3');
+                    Log.d("number", "3");
                 }
             }
         });
@@ -112,8 +119,10 @@ public class Calculator extends AppCompatActivity {
                 if (Objects.equals(editText.getText().toString(), startField)) {
                     editText.getText().clear();
                     editText.getText().append('4');
+                    Log.d("number", "4");
                 } else {
                     editText.getText().append('4');
+                    Log.d("number", "4");
                 }
             }
         });
@@ -125,8 +134,10 @@ public class Calculator extends AppCompatActivity {
                 if (Objects.equals(editText.getText().toString(), startField)) {
                     editText.getText().clear();
                     editText.getText().append('5');
+                    Log.d("number", "5");
                 } else {
                     editText.getText().append('5');
+                    Log.d("number", "5");
                 }
             }
         });
@@ -138,8 +149,10 @@ public class Calculator extends AppCompatActivity {
                 if (Objects.equals(editText.getText().toString(), startField)) {
                     editText.getText().clear();
                     editText.getText().append('6');
+                    Log.d("number", "6");
                 } else {
                     editText.getText().append('6');
+                    Log.d("number", "6");
                 }
             }
         });
@@ -151,8 +164,10 @@ public class Calculator extends AppCompatActivity {
                 if (Objects.equals(editText.getText().toString(), startField)) {
                     editText.getText().clear();
                     editText.getText().append('7');
+                    Log.d("number", "7");
                 } else {
                     editText.getText().append('7');
+                    Log.d("number", "7");
                 }
             }
         });
@@ -164,8 +179,10 @@ public class Calculator extends AppCompatActivity {
                 if (Objects.equals(editText.getText().toString(), startField)) {
                     editText.getText().clear();
                     editText.getText().append('8');
+                    Log.d("number", "8");
                 } else {
                     editText.getText().append('8');
+                    Log.d("number", "8");
                 }
             }
         });
@@ -177,8 +194,10 @@ public class Calculator extends AppCompatActivity {
                 if (Objects.equals(editText.getText().toString(), startField)) {
                     editText.getText().clear();
                     editText.getText().append('9');
+                    Log.d("number", "9");
                 } else {
                     editText.getText().append('9');
+                    Log.d("number", "9");
                 }
             }
         });
@@ -193,8 +212,10 @@ public class Calculator extends AppCompatActivity {
                     if (editText.getText().length() == 0) {
                         editText.getText().append('0');
                         editText.getText().append('.');
+                        Log.d("number", "0");
                     } else {
                         editText.getText().append('0');
+                        Log.d("number", "0");
                     }
                 }
             }
@@ -211,6 +232,7 @@ public class Calculator extends AppCompatActivity {
                     if (editText.getText().length() == 0) {
                     } else {
                         editText.getText().append('.');
+                        Log.d("symbol", "dot");
                     }
                 }
             }
@@ -222,6 +244,7 @@ public class Calculator extends AppCompatActivity {
             public void onClick(View view) {
                 if (editText.getText().length() != 0) {
                     editText.getText().delete(editText.getText().length() - 1, editText.getText().length());
+                    Log.d("symbol", "clear");
                 } else {
                     Toast.makeText(Calculator.this, "You try to delete nothing", Toast.LENGTH_SHORT).show();
                 }
@@ -234,6 +257,7 @@ public class Calculator extends AppCompatActivity {
             public void onClick(View view) {
                 if (editText.getText().length() != 0) {
                     editText.getText().clear();
+                    Log.d("symbol", "clear_all");
                 } else {
                     Toast.makeText(Calculator.this, "You try to delete nothing", Toast.LENGTH_SHORT).show();
                 }
@@ -248,6 +272,7 @@ public class Calculator extends AppCompatActivity {
                         && !editText.getText().toString().contains("+") && !editText.getText().toString().contains("-")
                         && !editText.getText().toString().contains("*") && !editText.getText().toString().contains("/")) {
                     editText.getText().append('+');
+                    Log.d("symbol", "+");
                 }
             }
         });
@@ -260,6 +285,7 @@ public class Calculator extends AppCompatActivity {
                         && !editText.getText().toString().contains("+") && !editText.getText().toString().contains("-")
                         && !editText.getText().toString().contains("*") && !editText.getText().toString().contains("/")) {
                     editText.getText().append('-');
+                    Log.d("symbol", "-");
                 }
             }
         });
@@ -272,6 +298,7 @@ public class Calculator extends AppCompatActivity {
                         && !editText.getText().toString().contains("+") && !editText.getText().toString().contains("-")
                         && !editText.getText().toString().contains("*") && !editText.getText().toString().contains("/")) {
                     editText.getText().append('*');
+                    Log.d("symbol", "*");
                 }
             }
         });
@@ -284,6 +311,7 @@ public class Calculator extends AppCompatActivity {
                         && !editText.getText().toString().contains("+") && !editText.getText().toString().contains("-")
                         && !editText.getText().toString().contains("*") && !editText.getText().toString().contains("/")) {
                     editText.getText().append('/');
+                    Log.d("symbol", "/");
                 }
             }
         });
@@ -316,6 +344,7 @@ public class Calculator extends AppCompatActivity {
                         firstNum = Double.parseDouble(editText.getText().toString().substring(0, editText.getText().toString().indexOf(operator)));
                         secondNum = Double.parseDouble(editText.getText().toString().substring(editText.getText().toString().indexOf(operator) + 1, editText.getText().length()));
                         result = calculatorLogic.operation(firstNum, secondNum, operator);
+                        Log.d("operation", "equal" + result);
                         if (Double.isNaN(result) || Double.isInfinite(result)) {
                             Toast.makeText(Calculator.this, "Calculating error. Probably your input is incorrect.", Toast.LENGTH_SHORT).show();
                         } else {
