@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Objects;
@@ -32,6 +33,7 @@ public class Calculator extends AppCompatActivity {
     Button buttonDivide;
     Button buttonClear;
     Button buttonClearAll;
+    TextView resultText;
 
     private CalculatorLogic calculatorLogic = new CalculatorLogic();
     private double firstNum;
@@ -64,8 +66,10 @@ public class Calculator extends AppCompatActivity {
         buttonDivide = findViewById(R.id.button_divide);
         buttonClear = findViewById(R.id.button_clear);
         buttonClearAll = findViewById(R.id.button_clear_all);
+        resultText = findViewById(R.id.textView);
 
         editText.setTextIsSelectable(true);
+        editText.setCursorVisible(false);
 
         button1.setOnClickListener(new View.OnClickListener() {
 
@@ -226,14 +230,16 @@ public class Calculator extends AppCompatActivity {
             @SuppressWarnings("StatementWithEmptyBody")
             @Override
             public void onClick(View view) {
-                if (Objects.equals(editText.getText().toString(), startField)) {
-                    editText.getText().clear();
+                if ((Objects.equals(editText.getText().toString(), startField)) ||
+                        (editText.getText().length() == 0) ||
+                        (editText.getText().charAt(editText.getText().length() - 1) == '.') ||
+                        (editText.getText().charAt(editText.getText().length() - 1) == '+') ||
+                        (editText.getText().charAt(editText.getText().length() - 1) == '-') ||
+                        (editText.getText().charAt(editText.getText().length() - 1) == '*') ||
+                        (editText.getText().charAt(editText.getText().length() - 1) == '/')) {
                 } else {
-                    if (editText.getText().length() == 0) {
-                    } else {
-                        editText.getText().append('.');
-                        Log.d("symbol", "dot");
-                    }
+                    editText.getText().append('.');
+                    Log.d("symbol", "dot");
                 }
             }
         });
@@ -269,6 +275,7 @@ public class Calculator extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (editText.getText().length() != 0 && !Objects.equals(editText.getText().toString(), startField)
+                        && !(editText.getText().charAt(editText.getText().length() - 1) == '.')
                         && !editText.getText().toString().contains("+") && !editText.getText().toString().contains("-")
                         && !editText.getText().toString().contains("*") && !editText.getText().toString().contains("/")) {
                     editText.getText().append('+');
@@ -282,6 +289,7 @@ public class Calculator extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (editText.getText().length() != 0 && !Objects.equals(editText.getText().toString(), startField)
+                        && !(editText.getText().charAt(editText.getText().length() - 1) == '.')
                         && !editText.getText().toString().contains("+") && !editText.getText().toString().contains("-")
                         && !editText.getText().toString().contains("*") && !editText.getText().toString().contains("/")) {
                     editText.getText().append('-');
@@ -295,6 +303,7 @@ public class Calculator extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (editText.getText().length() != 0 && !Objects.equals(editText.getText().toString(), startField)
+                        && !(editText.getText().charAt(editText.getText().length() - 1) == '.')
                         && !editText.getText().toString().contains("+") && !editText.getText().toString().contains("-")
                         && !editText.getText().toString().contains("*") && !editText.getText().toString().contains("/")) {
                     editText.getText().append('*');
@@ -308,6 +317,7 @@ public class Calculator extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (editText.getText().length() != 0 && !Objects.equals(editText.getText().toString(), startField)
+                        && !(editText.getText().charAt(editText.getText().length() - 1) == '.')
                         && !editText.getText().toString().contains("+") && !editText.getText().toString().contains("-")
                         && !editText.getText().toString().contains("*") && !editText.getText().toString().contains("/")) {
                     editText.getText().append('/');
@@ -348,7 +358,7 @@ public class Calculator extends AppCompatActivity {
                         if (Double.isNaN(result) || Double.isInfinite(result)) {
                             Toast.makeText(Calculator.this, "Calculating error. Probably your input is incorrect.", Toast.LENGTH_SHORT).show();
                         } else {
-                            editText.setText(result.toString().substring(0, result.toString().indexOf('.')));
+                            resultText.setText(result.toString().substring(0, result.toString().indexOf('.')));
                         }
                     } catch (Exception e) {
                         Toast.makeText(Calculator.this, "Calculating error.", Toast.LENGTH_SHORT).show();

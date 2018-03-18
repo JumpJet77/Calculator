@@ -243,4 +243,18 @@
         android:text="@string/clear_button"
         app:layout_constraintEnd_toStartOf="@+id/button_clear_all"
         app:layout_constraintTop_toTopOf="@+id/button_clear_all" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/result"
+        android:textSize="@android:dimen/app_icon_size"
+        app:layout_constraintBottom_toBottomOf="@id/button_clear"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/button_clear"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="397dp" />
+
 </android.support.constraint.ConstraintLayout>
