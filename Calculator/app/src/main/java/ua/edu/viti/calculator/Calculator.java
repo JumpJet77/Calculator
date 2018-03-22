@@ -44,6 +44,7 @@ public class Calculator extends AppCompatActivity {
     private char operator;
     private Double result;
     private String startField = "Input Field";
+    private boolean flag;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -239,9 +240,12 @@ public class Calculator extends AppCompatActivity {
                         (editText.getText().charAt(editText.getText().length() - 1) == '+') ||
                         (editText.getText().charAt(editText.getText().length() - 1) == '-') ||
                         (editText.getText().charAt(editText.getText().length() - 1) == '*') ||
-                        (editText.getText().charAt(editText.getText().length() - 1) == '/')) {
+                        (editText.getText().charAt(editText.getText().length() - 1) == '/') ||
+                        (flag)
+                        ) {
                 } else {
                     editText.getText().append('.');
+                    flag = true;
                     Log.d("symbol", "dot");
                 }
             }
@@ -282,6 +286,7 @@ public class Calculator extends AppCompatActivity {
                         && !editText.getText().toString().contains("+") && !editText.getText().toString().contains("-")
                         && !editText.getText().toString().contains("*") && !editText.getText().toString().contains("/")) {
                     editText.getText().append('+');
+                    flag = false;
                     Log.d("symbol", "+");
                 }
             }
@@ -296,6 +301,7 @@ public class Calculator extends AppCompatActivity {
                         && !editText.getText().toString().contains("+") && !editText.getText().toString().contains("-")
                         && !editText.getText().toString().contains("*") && !editText.getText().toString().contains("/")) {
                     editText.getText().append('-');
+                    flag = false;
                     Log.d("symbol", "-");
                 }
             }
@@ -310,6 +316,7 @@ public class Calculator extends AppCompatActivity {
                         && !editText.getText().toString().contains("+") && !editText.getText().toString().contains("-")
                         && !editText.getText().toString().contains("*") && !editText.getText().toString().contains("/")) {
                     editText.getText().append('*');
+                    flag = false;
                     Log.d("symbol", "*");
                 }
             }
@@ -324,6 +331,7 @@ public class Calculator extends AppCompatActivity {
                         && !editText.getText().toString().contains("+") && !editText.getText().toString().contains("-")
                         && !editText.getText().toString().contains("*") && !editText.getText().toString().contains("/")) {
                     editText.getText().append('/');
+                    flag = false;
                     Log.d("symbol", "/");
                 }
             }
