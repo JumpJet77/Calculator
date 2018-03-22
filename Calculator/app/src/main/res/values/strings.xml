@@ -20,4 +20,5 @@
     <string name="divide_button">/</string>
     <string name="equal_button">=</string>
     <string name="result">Result</string>
+    <string name="converter">Converter</string>
 </resources>
