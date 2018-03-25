@@ -21,4 +21,26 @@
     <string name="equal_button">=</string>
     <string name="result">Result</string>
     <string name="converter">Converter</string>
+    <string name="swipe">Swipe</string>
+    <string name="convert">Convert</string>
+    <string name="swap">Swap</string>
+
+    <string-array name="convert2">
+        <item>Kilograms</item>
+        <item>Meters</item>
+        <item>Celsius</item>
+    </string-array>
+
+    <string-array name="convert1">
+        <item>Pounds</item>
+        <item>Foots</item>
+        <item>Kelvins</item>
+    </string-array>
+
+    <string-array name="spinnerItems">
+        <item>Weight</item>
+        <item>Length</item>
+        <item>Temperature</item>
+    </string-array>
+
 </resources>

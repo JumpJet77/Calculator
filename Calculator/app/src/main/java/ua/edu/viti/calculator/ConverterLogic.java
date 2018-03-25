@@ -6,9 +6,36 @@ package ua.edu.viti.calculator;
 
 public class ConverterLogic {
 
-    public double convertMass(double value) {
-
-
-        return 0;
+    public Double convert(double value, int flag) {
+        Double returnValue;
+        switch (flag) {
+            case 0: {
+                returnValue = value * 0.453592;
+                break;
+            }
+            case 1: {
+                returnValue = value * 2.20462;
+                break;
+            }
+            case 2: {
+                returnValue = value * 0.3048;
+                break;
+            }
+            case 3: {
+                returnValue = value * 3.28084;
+                break;
+            }
+            case 4: {
+                returnValue = value * -272.15;
+                break;
+            }
+            case 5: {
+                returnValue = value * 274.15;
+                break;
+            }
+            default:
+                return Double.POSITIVE_INFINITY;
+        }
+        return returnValue;
     }
 }
