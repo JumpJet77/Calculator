@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Калькулятор</string>
+    <string name="result">Результат</string>
+    <string name="converter">Конвертор</string>
+    <string name="swipe">Змінити місцями</string>
+    <string name="convert">Переконвертувати</string>
+    <string name="swap">Змінити місцями</string>
+    <string name="hint">Підказка</string>
+    <string name="input_field">Поле для введення</string>
+</resources>
